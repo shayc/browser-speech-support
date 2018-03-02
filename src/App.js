@@ -1,18 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import platform from 'platform';
+
+import speechSupport from './speech-support';
 import './App.css';
 
 class App extends Component {
+  state = {};
+
+  componentDidMount() {
+    tts.getVoices().then(voices=>{
+
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">Browser Speech Synthesis API support</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+
+        <h2>Platform</h2>
+        <pre>{JSON.stringify(platform, null, 2)}</pre>
+        <pre>{JSON.stringify(, null, 2)}</pre>
       </div>
     );
   }
