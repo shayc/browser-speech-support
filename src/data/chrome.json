@@ -1,0 +1,929 @@
+[
+  {
+    "browserName": "Chrome Mobile",
+    "browserVersion": "64.0.3282.137",
+    "osFamily": "Android",
+    "osVersion": "8.1.0",
+    "voices": [
+      {
+        "default": true,
+        "lang": "bn_BD",
+        "localService": true,
+        "name": "Bangla Bangladesh",
+        "voiceURI": "Bangla Bangladesh"
+      },
+      {
+        "default": false,
+        "lang": "bn_IN",
+        "localService": true,
+        "name": "Bangla India",
+        "voiceURI": "Bangla India"
+      },
+      {
+        "default": false,
+        "lang": "cs_CZ",
+        "localService": true,
+        "name": "Czech Czechia",
+        "voiceURI": "Czech Czechia"
+      },
+      {
+        "default": false,
+        "lang": "da_DK",
+        "localService": true,
+        "name": "Danish Denmark",
+        "voiceURI": "Danish Denmark"
+      },
+      {
+        "default": false,
+        "lang": "de_DE",
+        "localService": true,
+        "name": "German Germany",
+        "voiceURI": "German Germany"
+      },
+      {
+        "default": false,
+        "lang": "el_GR",
+        "localService": true,
+        "name": "Greek Greece",
+        "voiceURI": "Greek Greece"
+      },
+      {
+        "default": false,
+        "lang": "en_AU",
+        "localService": true,
+        "name": "English Australia",
+        "voiceURI": "English Australia"
+      },
+      {
+        "default": false,
+        "lang": "en_GB",
+        "localService": true,
+        "name": "English United Kingdom",
+        "voiceURI": "English United Kingdom"
+      },
+      {
+        "default": false,
+        "lang": "en_IN",
+        "localService": true,
+        "name": "English India",
+        "voiceURI": "English India"
+      },
+      {
+        "default": false,
+        "lang": "en_US",
+        "localService": true,
+        "name": "English United States",
+        "voiceURI": "English United States"
+      },
+      {
+        "default": false,
+        "lang": "es_ES",
+        "localService": true,
+        "name": "Spanish Spain",
+        "voiceURI": "Spanish Spain"
+      },
+      {
+        "default": false,
+        "lang": "es_US",
+        "localService": true,
+        "name": "Spanish United States",
+        "voiceURI": "Spanish United States"
+      },
+      {
+        "default": false,
+        "lang": "et_EE",
+        "localService": true,
+        "name": "Estonian Estonia",
+        "voiceURI": "Estonian Estonia"
+      },
+      {
+        "default": false,
+        "lang": "fi_FI",
+        "localService": true,
+        "name": "Finnish Finland",
+        "voiceURI": "Finnish Finland"
+      },
+      {
+        "default": false,
+        "lang": "fil_PH",
+        "localService": true,
+        "name": "Filipino Philippines",
+        "voiceURI": "Filipino Philippines"
+      },
+      {
+        "default": false,
+        "lang": "fr_BE",
+        "localService": true,
+        "name": "French Belgium",
+        "voiceURI": "French Belgium"
+      },
+      {
+        "default": false,
+        "lang": "fr_FR",
+        "localService": true,
+        "name": "French France",
+        "voiceURI": "French France"
+      },
+      {
+        "default": false,
+        "lang": "hi_IN",
+        "localService": true,
+        "name": "Hindi India",
+        "voiceURI": "Hindi India"
+      },
+      {
+        "default": false,
+        "lang": "hu_HU",
+        "localService": true,
+        "name": "Hungarian Hungary",
+        "voiceURI": "Hungarian Hungary"
+      },
+      {
+        "default": false,
+        "lang": "in_ID",
+        "localService": true,
+        "name": "Indonesian Indonesia",
+        "voiceURI": "Indonesian Indonesia"
+      },
+      {
+        "default": false,
+        "lang": "it_IT",
+        "localService": true,
+        "name": "Italian Italy",
+        "voiceURI": "Italian Italy"
+      },
+      {
+        "default": false,
+        "lang": "ja_JP",
+        "localService": true,
+        "name": "Japanese Japan",
+        "voiceURI": "Japanese Japan"
+      },
+      {
+        "default": false,
+        "lang": "km_KH",
+        "localService": true,
+        "name": "Khmer Cambodia",
+        "voiceURI": "Khmer Cambodia"
+      },
+      {
+        "default": false,
+        "lang": "ko_KR",
+        "localService": true,
+        "name": "Korean South Korea",
+        "voiceURI": "Korean South Korea"
+      },
+      {
+        "default": false,
+        "lang": "nb_NO",
+        "localService": true,
+        "name": "Norwegian Bokmål Norway",
+        "voiceURI": "Norwegian Bokmål Norway"
+      },
+      {
+        "default": false,
+        "lang": "ne_NP",
+        "localService": true,
+        "name": "Nepali Nepal",
+        "voiceURI": "Nepali Nepal"
+      },
+      {
+        "default": false,
+        "lang": "nl_NL",
+        "localService": true,
+        "name": "Dutch Netherlands",
+        "voiceURI": "Dutch Netherlands"
+      },
+      {
+        "default": false,
+        "lang": "pl_PL",
+        "localService": true,
+        "name": "Polish Poland",
+        "voiceURI": "Polish Poland"
+      },
+      {
+        "default": false,
+        "lang": "pt_BR",
+        "localService": true,
+        "name": "Portuguese Brazil",
+        "voiceURI": "Portuguese Brazil"
+      },
+      {
+        "default": false,
+        "lang": "pt_PT",
+        "localService": true,
+        "name": "Portuguese Portugal",
+        "voiceURI": "Portuguese Portugal"
+      },
+      {
+        "default": false,
+        "lang": "ro_RO",
+        "localService": true,
+        "name": "Romanian Romania",
+        "voiceURI": "Romanian Romania"
+      },
+      {
+        "default": false,
+        "lang": "ru_RU",
+        "localService": true,
+        "name": "Russian Russia",
+        "voiceURI": "Russian Russia"
+      },
+      {
+        "default": false,
+        "lang": "si_LK",
+        "localService": true,
+        "name": "Sinhala Sri Lanka",
+        "voiceURI": "Sinhala Sri Lanka"
+      },
+      {
+        "default": false,
+        "lang": "sk_SK",
+        "localService": true,
+        "name": "Slovak Slovakia",
+        "voiceURI": "Slovak Slovakia"
+      },
+      {
+        "default": false,
+        "lang": "sv_SE",
+        "localService": true,
+        "name": "Swedish Sweden",
+        "voiceURI": "Swedish Sweden"
+      },
+      {
+        "default": false,
+        "lang": "th_TH",
+        "localService": true,
+        "name": "Thai Thailand",
+        "voiceURI": "Thai Thailand"
+      },
+      {
+        "default": false,
+        "lang": "tr_TR",
+        "localService": true,
+        "name": "Turkish Turkey",
+        "voiceURI": "Turkish Turkey"
+      },
+      {
+        "default": false,
+        "lang": "uk_UA",
+        "localService": true,
+        "name": "Ukrainian Ukraine",
+        "voiceURI": "Ukrainian Ukraine"
+      },
+      {
+        "default": false,
+        "lang": "vi_VN",
+        "localService": true,
+        "name": "Vietnamese Vietnam",
+        "voiceURI": "Vietnamese Vietnam"
+      },
+      {
+        "default": false,
+        "lang": "yue_HK",
+        "localService": true,
+        "name": "Cantonese Hong Kong",
+        "voiceURI": "Cantonese Hong Kong"
+      },
+      {
+        "default": false,
+        "lang": "zh_CN_#Hans",
+        "localService": true,
+        "name": "Chinese China",
+        "voiceURI": "Chinese China"
+      },
+      {
+        "default": false,
+        "lang": "zh_TW_#Hant",
+        "localService": true,
+        "name": "Chinese Taiwan",
+        "voiceURI": "Chinese Taiwan"
+      }
+    ]
+  },
+  {
+    "browserName": "Chrome",
+    "browserVersion": "64.0.3282.186",
+    "osFamily": "Windows",
+    "osVersion": "10",
+    "voices": [
+      {
+        "default": true,
+        "lang": "en-US",
+        "localService": true,
+        "name": "Microsoft David Desktop - English (United States)",
+        "voiceURI": "Microsoft David Desktop - English (United States)"
+      },
+      {
+        "default": false,
+        "lang": "en-US",
+        "localService": true,
+        "name": "Microsoft Zira Desktop - English (United States)",
+        "voiceURI": "Microsoft Zira Desktop - English (United States)"
+      },
+      {
+        "default": false,
+        "lang": "de-DE",
+        "localService": false,
+        "name": "Google Deutsch",
+        "voiceURI": "Google Deutsch"
+      },
+      {
+        "default": false,
+        "lang": "en-US",
+        "localService": false,
+        "name": "Google US English",
+        "voiceURI": "Google US English"
+      },
+      {
+        "default": false,
+        "lang": "en-GB",
+        "localService": false,
+        "name": "Google UK English Female",
+        "voiceURI": "Google UK English Female"
+      },
+      {
+        "default": false,
+        "lang": "en-GB",
+        "localService": false,
+        "name": "Google UK English Male",
+        "voiceURI": "Google UK English Male"
+      },
+      {
+        "default": false,
+        "lang": "es-ES",
+        "localService": false,
+        "name": "Google español",
+        "voiceURI": "Google español"
+      },
+      {
+        "default": false,
+        "lang": "es-US",
+        "localService": false,
+        "name": "Google español de Estados Unidos",
+        "voiceURI": "Google español de Estados Unidos"
+      },
+      {
+        "default": false,
+        "lang": "fr-FR",
+        "localService": false,
+        "name": "Google français",
+        "voiceURI": "Google français"
+      },
+      {
+        "default": false,
+        "lang": "hi-IN",
+        "localService": false,
+        "name": "Google हिन्दी",
+        "voiceURI": "Google हिन्दी"
+      },
+      {
+        "default": false,
+        "lang": "id-ID",
+        "localService": false,
+        "name": "Google Bahasa Indonesia",
+        "voiceURI": "Google Bahasa Indonesia"
+      },
+      {
+        "default": false,
+        "lang": "it-IT",
+        "localService": false,
+        "name": "Google italiano",
+        "voiceURI": "Google italiano"
+      },
+      {
+        "default": false,
+        "lang": "ja-JP",
+        "localService": false,
+        "name": "Google 日本語",
+        "voiceURI": "Google 日本語"
+      },
+      {
+        "default": false,
+        "lang": "ko-KR",
+        "localService": false,
+        "name": "Google 한국의",
+        "voiceURI": "Google 한국의"
+      },
+      {
+        "default": false,
+        "lang": "nl-NL",
+        "localService": false,
+        "name": "Google Nederlands",
+        "voiceURI": "Google Nederlands"
+      },
+      {
+        "default": false,
+        "lang": "pl-PL",
+        "localService": false,
+        "name": "Google polski",
+        "voiceURI": "Google polski"
+      },
+      {
+        "default": false,
+        "lang": "pt-BR",
+        "localService": false,
+        "name": "Google português do Brasil",
+        "voiceURI": "Google português do Brasil"
+      },
+      {
+        "default": false,
+        "lang": "ru-RU",
+        "localService": false,
+        "name": "Google русский",
+        "voiceURI": "Google русский"
+      },
+      {
+        "default": false,
+        "lang": "zh-CN",
+        "localService": false,
+        "name": "Google 普通话（中国大陆）",
+        "voiceURI": "Google 普通话（中国大陆）"
+      },
+      {
+        "default": false,
+        "lang": "zh-HK",
+        "localService": false,
+        "name": "Google 粤語（香港）",
+        "voiceURI": "Google 粤語（香港）"
+      },
+      {
+        "default": false,
+        "lang": "zh-TW",
+        "localService": false,
+        "name": "Google 國語（臺灣）",
+        "voiceURI": "Google 國語（臺灣）"
+      }
+    ]
+  },
+  {
+    "browserName": "Chrome",
+    "browserVersion": "64.0.3282.186",
+    "osFamily": "OS X",
+    "osVersion": "10.12.6",
+    "voices": [
+      {
+        "default": true,
+        "lang": "en-US",
+        "localService": true,
+        "name": "Alex",
+        "voiceURI": "Alex"
+      },
+      {
+        "default": false,
+        "lang": "it-IT",
+        "localService": true,
+        "name": "Alice",
+        "voiceURI": "Alice"
+      },
+      {
+        "default": false,
+        "lang": "sv-SE",
+        "localService": true,
+        "name": "Alva",
+        "voiceURI": "Alva"
+      },
+      {
+        "default": false,
+        "lang": "fr-CA",
+        "localService": true,
+        "name": "Amelie",
+        "voiceURI": "Amelie"
+      },
+      {
+        "default": false,
+        "lang": "de-DE",
+        "localService": true,
+        "name": "Anna",
+        "voiceURI": "Anna"
+      },
+      {
+        "default": false,
+        "lang": "he-IL",
+        "localService": true,
+        "name": "Carmit",
+        "voiceURI": "Carmit"
+      },
+      {
+        "default": false,
+        "lang": "id-ID",
+        "localService": true,
+        "name": "Damayanti",
+        "voiceURI": "Damayanti"
+      },
+      {
+        "default": false,
+        "lang": "en-GB",
+        "localService": true,
+        "name": "Daniel",
+        "voiceURI": "Daniel"
+      },
+      {
+        "default": false,
+        "lang": "es-AR",
+        "localService": true,
+        "name": "Diego",
+        "voiceURI": "Diego"
+      },
+      {
+        "default": false,
+        "lang": "nl-BE",
+        "localService": true,
+        "name": "Ellen",
+        "voiceURI": "Ellen"
+      },
+      {
+        "default": false,
+        "lang": "en",
+        "localService": true,
+        "name": "Fiona",
+        "voiceURI": "Fiona"
+      },
+      {
+        "default": false,
+        "lang": "en-US",
+        "localService": true,
+        "name": "Fred",
+        "voiceURI": "Fred"
+      },
+      {
+        "default": false,
+        "lang": "ro-RO",
+        "localService": true,
+        "name": "Ioana",
+        "voiceURI": "Ioana"
+      },
+      {
+        "default": false,
+        "lang": "pt-PT",
+        "localService": true,
+        "name": "Joana",
+        "voiceURI": "Joana"
+      },
+      {
+        "default": false,
+        "lang": "es-ES",
+        "localService": true,
+        "name": "Jorge",
+        "voiceURI": "Jorge"
+      },
+      {
+        "default": false,
+        "lang": "es-MX",
+        "localService": true,
+        "name": "Juan",
+        "voiceURI": "Juan"
+      },
+      {
+        "default": false,
+        "lang": "th-TH",
+        "localService": true,
+        "name": "Kanya",
+        "voiceURI": "Kanya"
+      },
+      {
+        "default": false,
+        "lang": "en-AU",
+        "localService": true,
+        "name": "Karen",
+        "voiceURI": "Karen"
+      },
+      {
+        "default": false,
+        "lang": "ja-JP",
+        "localService": true,
+        "name": "Kyoko",
+        "voiceURI": "Kyoko"
+      },
+      {
+        "default": false,
+        "lang": "sk-SK",
+        "localService": true,
+        "name": "Laura",
+        "voiceURI": "Laura"
+      },
+      {
+        "default": false,
+        "lang": "hi-IN",
+        "localService": true,
+        "name": "Lekha",
+        "voiceURI": "Lekha"
+      },
+      {
+        "default": false,
+        "lang": "it-IT",
+        "localService": true,
+        "name": "Luca",
+        "voiceURI": "Luca"
+      },
+      {
+        "default": false,
+        "lang": "pt-BR",
+        "localService": true,
+        "name": "Luciana",
+        "voiceURI": "Luciana"
+      },
+      {
+        "default": false,
+        "lang": "ar-SA",
+        "localService": true,
+        "name": "Maged",
+        "voiceURI": "Maged"
+      },
+      {
+        "default": false,
+        "lang": "hu-HU",
+        "localService": true,
+        "name": "Mariska",
+        "voiceURI": "Mariska"
+      },
+      {
+        "default": false,
+        "lang": "zh-TW",
+        "localService": true,
+        "name": "Mei-Jia",
+        "voiceURI": "Mei-Jia"
+      },
+      {
+        "default": false,
+        "lang": "el-GR",
+        "localService": true,
+        "name": "Melina",
+        "voiceURI": "Melina"
+      },
+      {
+        "default": false,
+        "lang": "ru-RU",
+        "localService": true,
+        "name": "Milena",
+        "voiceURI": "Milena"
+      },
+      {
+        "default": false,
+        "lang": "en-IE",
+        "localService": true,
+        "name": "Moira",
+        "voiceURI": "Moira"
+      },
+      {
+        "default": false,
+        "lang": "es-ES",
+        "localService": true,
+        "name": "Monica",
+        "voiceURI": "Monica"
+      },
+      {
+        "default": false,
+        "lang": "nb-NO",
+        "localService": true,
+        "name": "Nora",
+        "voiceURI": "Nora"
+      },
+      {
+        "default": false,
+        "lang": "es-MX",
+        "localService": true,
+        "name": "Paulina",
+        "voiceURI": "Paulina"
+      },
+      {
+        "default": false,
+        "lang": "en-US",
+        "localService": true,
+        "name": "Samantha",
+        "voiceURI": "Samantha"
+      },
+      {
+        "default": false,
+        "lang": "da-DK",
+        "localService": true,
+        "name": "Sara",
+        "voiceURI": "Sara"
+      },
+      {
+        "default": false,
+        "lang": "fi-FI",
+        "localService": true,
+        "name": "Satu",
+        "voiceURI": "Satu"
+      },
+      {
+        "default": false,
+        "lang": "zh-HK",
+        "localService": true,
+        "name": "Sin-ji",
+        "voiceURI": "Sin-ji"
+      },
+      {
+        "default": false,
+        "lang": "en-ZA",
+        "localService": true,
+        "name": "Tessa",
+        "voiceURI": "Tessa"
+      },
+      {
+        "default": false,
+        "lang": "fr-FR",
+        "localService": true,
+        "name": "Thomas",
+        "voiceURI": "Thomas"
+      },
+      {
+        "default": false,
+        "lang": "zh-CN",
+        "localService": true,
+        "name": "Ting-Ting",
+        "voiceURI": "Ting-Ting"
+      },
+      {
+        "default": false,
+        "lang": "en-IN",
+        "localService": true,
+        "name": "Veena",
+        "voiceURI": "Veena"
+      },
+      {
+        "default": false,
+        "lang": "en-US",
+        "localService": true,
+        "name": "Victoria",
+        "voiceURI": "Victoria"
+      },
+      {
+        "default": false,
+        "lang": "nl-NL",
+        "localService": true,
+        "name": "Xander",
+        "voiceURI": "Xander"
+      },
+      {
+        "default": false,
+        "lang": "tr-TR",
+        "localService": true,
+        "name": "Yelda",
+        "voiceURI": "Yelda"
+      },
+      {
+        "default": false,
+        "lang": "ko-KR",
+        "localService": true,
+        "name": "Yuna",
+        "voiceURI": "Yuna"
+      },
+      {
+        "default": false,
+        "lang": "ru-RU",
+        "localService": true,
+        "name": "Yuri",
+        "voiceURI": "Yuri"
+      },
+      {
+        "default": false,
+        "lang": "pl-PL",
+        "localService": true,
+        "name": "Zosia",
+        "voiceURI": "Zosia"
+      },
+      {
+        "default": false,
+        "lang": "cs-CZ",
+        "localService": true,
+        "name": "Zuzana",
+        "voiceURI": "Zuzana"
+      },
+      {
+        "default": false,
+        "lang": "de-DE",
+        "localService": false,
+        "name": "Google Deutsch",
+        "voiceURI": "Google Deutsch"
+      },
+      {
+        "default": false,
+        "lang": "en-US",
+        "localService": false,
+        "name": "Google US English",
+        "voiceURI": "Google US English"
+      },
+      {
+        "default": false,
+        "lang": "en-GB",
+        "localService": false,
+        "name": "Google UK English Female",
+        "voiceURI": "Google UK English Female"
+      },
+      {
+        "default": false,
+        "lang": "en-GB",
+        "localService": false,
+        "name": "Google UK English Male",
+        "voiceURI": "Google UK English Male"
+      },
+      {
+        "default": false,
+        "lang": "es-ES",
+        "localService": false,
+        "name": "Google español",
+        "voiceURI": "Google español"
+      },
+      {
+        "default": false,
+        "lang": "es-US",
+        "localService": false,
+        "name": "Google español de Estados Unidos",
+        "voiceURI": "Google español de Estados Unidos"
+      },
+      {
+        "default": false,
+        "lang": "fr-FR",
+        "localService": false,
+        "name": "Google français",
+        "voiceURI": "Google français"
+      },
+      {
+        "default": false,
+        "lang": "hi-IN",
+        "localService": false,
+        "name": "Google हिन्दी",
+        "voiceURI": "Google हिन्दी"
+      },
+      {
+        "default": false,
+        "lang": "id-ID",
+        "localService": false,
+        "name": "Google Bahasa Indonesia",
+        "voiceURI": "Google Bahasa Indonesia"
+      },
+      {
+        "default": false,
+        "lang": "it-IT",
+        "localService": false,
+        "name": "Google italiano",
+        "voiceURI": "Google italiano"
+      },
+      {
+        "default": false,
+        "lang": "ja-JP",
+        "localService": false,
+        "name": "Google 日本語",
+        "voiceURI": "Google 日本語"
+      },
+      {
+        "default": false,
+        "lang": "ko-KR",
+        "localService": false,
+        "name": "Google 한국의",
+        "voiceURI": "Google 한국의"
+      },
+      {
+        "default": false,
+        "lang": "nl-NL",
+        "localService": false,
+        "name": "Google Nederlands",
+        "voiceURI": "Google Nederlands"
+      },
+      {
+        "default": false,
+        "lang": "pl-PL",
+        "localService": false,
+        "name": "Google polski",
+        "voiceURI": "Google polski"
+      },
+      {
+        "default": false,
+        "lang": "pt-BR",
+        "localService": false,
+        "name": "Google português do Brasil",
+        "voiceURI": "Google português do Brasil"
+      },
+      {
+        "default": false,
+        "lang": "ru-RU",
+        "localService": false,
+        "name": "Google русский",
+        "voiceURI": "Google русский"
+      },
+      {
+        "default": false,
+        "lang": "zh-CN",
+        "localService": false,
+        "name": "Google 普通话（中国大陆）",
+        "voiceURI": "Google 普通话（中国大陆）"
+      },
+      {
+        "default": false,
+        "lang": "zh-HK",
+        "localService": false,
+        "name": "Google 粤語（香港）",
+        "voiceURI": "Google 粤語（香港）"
+      },
+      {
+        "default": false,
+        "lang": "zh-TW",
+        "localService": false,
+        "name": "Google 國語（臺灣）",
+        "voiceURI": "Google 國語（臺灣）"
+      }
+    ]
+  }
+]
