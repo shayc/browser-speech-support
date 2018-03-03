@@ -1,26 +1,5 @@
-
 const speechInspector = {
-  voices: [],
-
   isSupported: () => 'speechSynthesis' in window,
-
-  mapVoices(voices) {
-    return voices.map(voice => ({
-      default: voice.default,
-      lang: voice.lang,
-      localService: voice.localService,
-      name: voice.name,
-      voiceURI: voice.voiceURI
-    }));
-  },
-
-  getSpeechInfo() {
-    const mappedVoices = this.mapVoices(this.voices);
-    const info = {
-      voices: mappedVoices
-    };
-    return info;
-  },
 
   getVoices() {
     return new Promise((resolve, reject) => {
@@ -40,10 +19,18 @@ const speechInspector = {
     });
   },
 
+  mapVoices(voices) {
+    return voices.map(voice => ({
+      default: voice.default,
+      lang: voice.lang,
+      localService: voice.localService,
+      name: voice.name,
+      voiceURI: voice.voiceURI
+    }));
+  },
+
   init() {
-    return this.getVoices().then(voices => {
-      this.voices = voices;
-    });
+    return this.getVoices().then(voices => this.mapVoices(voices));
   }
 };
 

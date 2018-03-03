@@ -22,11 +22,46 @@ const styles = theme => ({
 
 const propTypes = {
   classes: PropTypes.object.isRequired,
-  data: PropTypes.array
+  voices: PropTypes.arrayOf(
+    PropTypes.shape({
+      /**
+       * A BCP 47 language tag indicating the language of the voice.
+       */
+      lang: PropTypes.string,
+      /**
+       * A human-readable name that represents the voice.
+       */
+      name: PropTypes.string,
+      /**
+       * A Boolean indicating whether the voice is the default voice for the
+       * current app language (true), or not (false.)
+       */
+      default: PropTypes.bool,
+      /**
+       * A Boolean indicating whether the voice is supplied by a local
+       * speech synthesizer service (true), or a remote speech
+       * synthesizer service (false.)
+       */
+      localService: PropTypes.bool,
+      /**
+       * The type of URI and location of the speech synthesis service for this
+       * voice.
+       */
+      voiceURI: PropTypes.string
+    })
+  )
+};
+
+const defaultProps = {
+  voices: []
 };
 
 function SimpleTable(props) {
-  const { classes, data } = props;
+  const { classes, voices } = props;
+
+  if (!voices.length) {
+    return null;
+  }
 
   return (
     <Paper className={classes.root}>
@@ -36,12 +71,12 @@ function SimpleTable(props) {
             <TableCell>Language Code</TableCell>
             <TableCell>Name</TableCell>
             <TableCell>Default</TableCell>
-            <TableCell>LocalService</TableCell>
+            <TableCell>Local Service</TableCell>
             <TableCell>Voice URI</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.map(voice => {
+          {voices.map(voice => {
             return (
               <TableRow key={voice.voiceURI}>
                 <TableCell>{voice.lang}</TableCell>
@@ -59,5 +94,5 @@ function SimpleTable(props) {
 }
 
 SimpleTable.propTypes = propTypes;
-
+SimpleTable.defaultProps = defaultProps;
 export default withStyles(styles)(SimpleTable);

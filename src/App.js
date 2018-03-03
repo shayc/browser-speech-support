@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import platform from 'platform';
 import firebase from 'firebase';
 // Temporary: LocaleCode is being loaded globally as a script tag - import dep has compile errors
 
 import speechInspector from './speech-inspector';
-import VoicesTable from './VoicesTable/VoicesTable';
-import chromeLogo from './platform-logos/chrome.svg';
-import firefoxLogo from './platform-logos/firefox.svg';
-import edgeLogo from './platform-logos/edge.svg';
+import AppBar from './AppBar/AppBar';
+import PlatformSummary from './PlatformSummary/PlatformSummary';
+import PlatformVoices from './PlatformVoices/PlatformVoices';
+import LanguageSearch from './LanguageSearch/LanguageSearch';
+import chromeLogo from './logos/chrome.svg';
+import firefoxLogo from './logos/firefox.svg';
+import edgeLogo from './logos/edge.svg';
 import './App.css';
 
 // Initialize Firebase
@@ -28,31 +32,26 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.signInAnonymously();
-    firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        // User is signed in.
-        var isAnonymous = user.isAnonymous;
-        var uid = user.uid;
-        console.log(uid);
-        speechInspector.init().then(() => {
-          const { voices } = speechInspector.getSpeechInfo();
-          const langs = this.getLangs(voices);
+    const onLogin = user => {
+      console.log('User logged in anonymously!');
+    };
 
-          this.createNewSpeechInfo(uid, voices);
-          this.setState({ voices, langs });
-        });
-        // ...
-      } else {
-        // User is signed out.
-        // ...
-      }
-      // ...
+    this.onAuthStateChanged(onLogin);
+    this.signInAnonymously();
+
+    speechInspector.init().then(voices => {
+      this.setState({ voices });
     });
   }
 
-  getLangs(voices) {
-    return [...new Set(voices.map(voice => voice.lang))];
+  getUniqueLangs(voices) {
+    return _.uniq(voices.map(voice => voice.lang));
+    // return [...new Set(voices.map(voice => voice.lang))];
+  }
+
+  filterLocalServices(voices) {
+    return voices.filter(voice => voice.localService);
+    // return [...new Set(voices.map(voice => voice.lang))];
   }
 
   getBrowserLogo(browserName) {
@@ -68,59 +67,59 @@ class App extends Component {
     }
   }
 
-  createNewSpeechInfo(uid, voices, langs) {
-    firebase
-      .database()
-      .ref(`${uid}/`)
-      .set({
-        voices,
-        browserName: platform.name,
-        browserVersion: platform.version,
-        osFamily: platform.os.family,
-        osVersion: platform.os.version
-      });
-  }
   signInAnonymously() {
-    firebase
+    return firebase
       .auth()
       .signInAnonymously()
       .catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // ...
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error(errorCode, errorMessage);
       });
   }
+
+  onAuthStateChanged(onLogin = user => {}, onLogout = () => {}) {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        onLogin(user);
+      } else {
+        onLogout();
+      }
+    });
+  }
+
+  writeSpeechData(uid, platform, voices) {
+    firebase
+      .database()
+      .ref(`dump/${uid}/`)
+      .set({
+        browserName: platform.name,
+        browserVersion: platform.version,
+        osFamily: platform.os.family,
+        osVersion: platform.os.version,
+        voices
+      });
+  }
+
   render() {
-    console.log(JSON.stringify(this.state, null, 2));
-    console.log(JSON.stringify(platform, null, 2));
-    const browserName = platform.name;
-    const browserLogo = this.getBrowserLogo(browserName);
+    const summary = {
+      browserName: platform.name,
+      browserVersion: platform.version,
+      osFamily: platform.os.family,
+      osVersion: platform.os.version,
+      langs: this.getUniqueLangs(this.state.voices).length,
+      voices: this.state.voices.length,
+      localServices: this.filterLocalServices(this.state.voices).length
+    };
+
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Browser Speech Synthesis API support</h1>
-        </header>
-        <h2>
-          {speechInspector.isSupported()
-            ? 'Your browser supports Speech Synthesis API'
-            : "Your browser doesn't support Speech Synthesis API"}
-        </h2>
-        <ul>
-          <li>
-            Browser:{' '}
-            {browserLogo && (
-              <img src={browserLogo} alt={browserName} width="24" height="24" />
-            )}{' '}
-            {browserName} {platform.version}
-          </li>
-          <li>
-            OS: {platform.os.family} {platform.os.version}
-          </li>
-          <li>Voices: {this.state.voices.length}</li>
-          <li>Languages: {this.state.langs.length}</li>
-        </ul>
-        <VoicesTable data={this.state.voices} />
+        <AppBar />
+        <div className="App__main">
+          <LanguageSearch />
+          <PlatformSummary summary={summary} />
+          <PlatformVoices voices={this.state.voices} />
+        </div>
       </div>
     );
   }
