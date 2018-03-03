@@ -28,11 +28,31 @@ class App extends Component {
   };
 
   componentDidMount() {
-    speechInspector.init().then(() => {
-      const { voices, langs } = speechInspector.getSpeechInfo();
-      this.createNewSpeechInfo(voices);
-      this.setState({ voices, langs });
+    this.signInAnonymously();
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        // User is signed in.
+        var isAnonymous = user.isAnonymous;
+        var uid = user.uid;
+        console.log(uid);
+        speechInspector.init().then(() => {
+          const { voices } = speechInspector.getSpeechInfo();
+          const langs = this.getLangs(voices);
+
+          this.createNewSpeechInfo(uid, voices);
+          this.setState({ voices, langs });
+        });
+        // ...
+      } else {
+        // User is signed out.
+        // ...
+      }
+      // ...
     });
+  }
+
+  getLangs(voices) {
+    return [...new Set(voices.map(voice => voice.lang))];
   }
 
   getBrowserLogo(browserName) {
@@ -48,13 +68,29 @@ class App extends Component {
     }
   }
 
-  createNewSpeechInfo(voices) {
+  createNewSpeechInfo(uid, voices, langs) {
     firebase
       .database()
-      .ref('browser/voices')
-      .push(voices);
+      .ref(`${uid}/`)
+      .set({
+        voices,
+        browserName: platform.name,
+        browserVersion: platform.version,
+        osFamily: platform.os.family,
+        osVersion: platform.os.version
+      });
   }
-
+  signInAnonymously() {
+    firebase
+      .auth()
+      .signInAnonymously()
+      .catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
+      });
+  }
   render() {
     console.log(JSON.stringify(this.state, null, 2));
     console.log(JSON.stringify(platform, null, 2));

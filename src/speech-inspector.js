@@ -16,10 +16,8 @@ const speechInspector = {
 
   getSpeechInfo() {
     const mappedVoices = this.mapVoices(this.voices);
-    const langs = this.getLangs();
     const info = {
-      voices: mappedVoices,
-      langs
+      voices: mappedVoices
     };
     return info;
   },
@@ -40,10 +38,6 @@ const speechInspector = {
         };
       }
     });
-  },
-
-  getLangs() {
-    return [...new Set(this.voices.map(voice => voice.lang))];
   },
 
   init() {
