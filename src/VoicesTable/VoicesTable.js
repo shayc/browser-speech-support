@@ -34,10 +34,10 @@ function SimpleTable(props) {
         <TableHead>
           <TableRow>
             <TableCell>Language Code</TableCell>
-            <TableCell numeric>Name</TableCell>
-            <TableCell numeric>Default</TableCell>
-            <TableCell numeric>LocalService</TableCell>
-            <TableCell numeric>Voice URI</TableCell>
+            <TableCell>Name</TableCell>
+            <TableCell>Default</TableCell>
+            <TableCell>LocalService</TableCell>
+            <TableCell>Voice URI</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
