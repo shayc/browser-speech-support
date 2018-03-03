@@ -1,5 +1,5 @@
 
-const tts = {
+const speechInspector = {
   voices: [],
 
   isSupported: () => 'speechSynthesis' in window,
@@ -53,4 +53,4 @@ const tts = {
   }
 };
 
-export default tts;
+export default speechInspector;

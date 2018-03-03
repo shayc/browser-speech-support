@@ -3,7 +3,7 @@ import platform from 'platform';
 import firebase from 'firebase';
 // Temporary: LocaleCode is being loaded globally as a script tag - import dep has compile errors
 
-import tts from './tts';
+import speechInspector from './speech-inspector';
 import VoicesTable from './VoicesTable/VoicesTable';
 import chromeLogo from './platform-logos/chrome.svg';
 import firefoxLogo from './platform-logos/firefox.svg';
@@ -28,8 +28,8 @@ class App extends Component {
   };
 
   componentDidMount() {
-    tts.init().then(() => {
-      const { voices, langs } = tts.getSpeechInfo();
+    speechInspector.init().then(() => {
+      const { voices, langs } = speechInspector.getSpeechInfo();
       this.createNewSpeechInfo(voices);
       this.setState({ voices, langs });
     });
@@ -66,7 +66,7 @@ class App extends Component {
           <h1 className="App-title">Browser Speech Synthesis API support</h1>
         </header>
         <h2>
-          {tts.isSupported()
+          {speechInspector.isSupported()
             ? 'Your browser supports Speech Synthesis API'
             : "Your browser doesn't support Speech Synthesis API"}
         </h2>
