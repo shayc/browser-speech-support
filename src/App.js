@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import platform from 'platform';
-import LocaleCode from 'locale-code';
 
 import tts from './tts';
 import VoicesTable from './VoicesTable/VoicesTable';
