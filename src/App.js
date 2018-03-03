@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import platform from 'platform';
 import firebase from 'firebase';
-// Temporary: LocaleCode is being loaded as a script tag, and is available globally - import has compile errors
+// Temporary: LocaleCode is being loaded globally as a script tag - import dep has compile errors
 
 import tts from './tts';
 import VoicesTable from './VoicesTable/VoicesTable';
-import chromeLogo from './chrome.svg';
-import firefoxLogo from './firefox.svg';
-import edgeLogo from './edge.svg';
+import chromeLogo from './platform-logos/chrome.svg';
+import firefoxLogo from './platform-logos/firefox.svg';
+import edgeLogo from './platform-logos/edge.svg';
 import './App.css';
 
 // Initialize Firebase
@@ -52,7 +52,7 @@ class App extends Component {
     firebase
       .database()
       .ref('browser/voices')
-      .set(voices);
+      .push(voices);
   }
 
   render() {
