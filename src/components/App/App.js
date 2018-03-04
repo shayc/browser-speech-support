@@ -15,6 +15,8 @@ import PlatformSummary from '../PlatformSummary/PlatformSummary';
 import PlatformVoices from '../PlatformVoices/PlatformVoices';
 import BrowserSupportPanel from '../BrowserSupportPanel/BrowserSupportPanel';
 import LanguageSearch from '../LanguageSearch/LanguageSearch';
+import Typography from 'material-ui/Typography';
+import Divider from 'material-ui/Divider';
 import './App.css';
 
 // Initialize Firebase
@@ -123,6 +125,10 @@ class App extends Component {
             edge={this.formatPlatformsJSON(edgeJSON)}
             firefox={this.formatPlatformsJSON(firefoxJSON)}
           />
+          <Divider />
+          <Typography variant="headline">
+            Your browser:
+          </Typography>
           <PlatformSummary summary={summary} />
           <PlatformVoices voices={this.state.voices} />
         </div>
