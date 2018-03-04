@@ -1,0 +1,8 @@
+.aspect-ratio-box {
+  background: white;
+}
+
+.aspect-ratio-box::before {
+  content: '';
+  padding-top: 100%;
+}

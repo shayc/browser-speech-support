@@ -1,0 +1,7 @@
+.BrowserSupport {
+  display: flex;
+}
+
+.BrowserSupport__detail-report {
+  flex: 1;
+}

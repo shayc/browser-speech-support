@@ -4,16 +4,16 @@ import platform from 'platform';
 import firebase from 'firebase';
 // Temporary: LocaleCode is being loaded globally as a script tag - import dep has compile errors
 
-import speechInspector from './speech-inspector';
-import AppBar from './AppBar/AppBar';
-import PlatformSummary from './PlatformSummary/PlatformSummary';
-import PlatformVoices from './PlatformVoices/PlatformVoices';
-import BrowsersSpeechSupport from './BrowsersSpeechSupport/BrowsersSpeechSupport';
-import LanguageSearch from './LanguageSearch/LanguageSearch';
-
-import chromeJSON from './data/chrome.json';
-import safariJSON from './data/safari.json';
-import edgeJSON from './data/edge.json';
+import chromeJSON from '../../data/chrome.json';
+import safariJSON from '../../data/safari.json';
+import edgeJSON from '../../data/edge.json';
+import firefoxJSON from '../../data/firefox.json';
+import speechInspector from '../../speechInspector';
+import AppBar from '../AppBar/AppBar';
+import PlatformSummary from '../PlatformSummary/PlatformSummary';
+import PlatformVoices from '../PlatformVoices/PlatformVoices';
+import BrowserSupport from '../BrowserSupport/BrowserSupport';
+import LanguageSearch from '../LanguageSearch/LanguageSearch';
 import './App.css';
 
 // Initialize Firebase
@@ -29,8 +29,7 @@ firebase.initializeApp(config);
 
 class App extends Component {
   state = {
-    voices: [],
-    langs: []
+    voices: []
   };
 
   componentDidMount() {
@@ -46,14 +45,12 @@ class App extends Component {
     this.signInAnonymously();
   }
 
-  getUniqueLangs(voices) {
+  getAvailableLangs(voices) {
     return _.uniq(voices.map(voice => voice.lang));
-    // return [...new Set(voices.map(voice => voice.lang))];
   }
 
   filterLocalServices(voices) {
     return voices.filter(voice => voice.localService);
-    // return [...new Set(voices.map(voice => voice.lang))];
   }
 
   signInAnonymously() {
@@ -96,7 +93,7 @@ class App extends Component {
       browserVersion: platform.browserVersion,
       osFamily: platform.osFamily,
       osVersion: platform.osVersion,
-      langs: this.getUniqueLangs(platform.voices).length,
+      langs: this.getAvailableLangs(platform.voices).length,
       voices: platform.voices.length,
       localServices: this.filterLocalServices(platform.voices).length
     }));
@@ -108,7 +105,7 @@ class App extends Component {
       browserVersion: platform.version,
       osFamily: platform.os.family,
       osVersion: platform.os.version,
-      langs: this.getUniqueLangs(this.state.voices).length,
+      langs: this.getAvailableLangs(this.state.voices).length,
       voices: this.state.voices.length,
       localServices: this.filterLocalServices(this.state.voices).length
     };
@@ -118,10 +115,11 @@ class App extends Component {
         <AppBar />
         <div className="App__main">
           <LanguageSearch />
-          <BrowsersSpeechSupport
+          <BrowserSupport
             chrome={this.formatPlatformsJSON(chromeJSON)}
             safari={this.formatPlatformsJSON(safariJSON)}
             edge={this.formatPlatformsJSON(edgeJSON)}
+            firefox={this.formatPlatformsJSON(firefoxJSON)}
           />
           <PlatformSummary summary={summary} />
           <PlatformVoices voices={this.state.voices} />

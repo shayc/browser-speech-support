@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "browserName": "Firefox",
+    "browserVersion": "59.0",
+    "osFamily": "Windows",
+    "osVersion": "10",
+    "voices": [
+      {
+        "default": false,
+        "lang": "en-US",
+        "localService": true,
+        "name": "Microsoft David Desktop - English (United States)",
+        "voiceURI":
+          "urn:moz-tts:sapi:Microsoft David Desktop - English (United States)?en-US"
+      },
+      {
+        "default": false,
+        "lang": "en-US",
+        "localService": true,
+        "name": "Microsoft Zira Desktop - English (United States)",
+        "voiceURI":
+          "urn:moz-tts:sapi:Microsoft Zira Desktop - English (United States)?en-US"
+      }
+    ]
+  }
+]
