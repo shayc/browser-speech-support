@@ -125,10 +125,12 @@ class App extends Component {
             edge={this.formatPlatformsJSON(edgeJSON)}
             firefox={this.formatPlatformsJSON(firefoxJSON)}
           />
-          <Divider />
-          <Typography variant="headline">
-            Your browser:
-          </Typography>
+          <Typography variant="headline">Your browser:</Typography>
+          <div className="Disclaimer">
+            <Typography variant="subheading">
+              Disclaimer: the data below is being collected anonymously so we can better map Speech Synthesis across platforms.
+            </Typography>
+          </div>
           <PlatformSummary summary={summary} />
           <PlatformVoices voices={this.state.voices} />
         </div>
