@@ -4,11 +4,12 @@ import { withStyles } from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 
-import BrowserDetailReport from '../BrowserDetailReport/BrowserDetailReport';
+import BrowserDetails from '../BrowserDetails/BrowserDetails';
 import chromeLogo from '../../logos/chrome.svg';
 import firefoxLogo from '../../logos/firefox.svg';
 import edgeLogo from '../../logos/edge.svg';
-import './BrowserSupport.css';
+import safariLogo from '../../logos/safari.svg';
+import './BrowserSupportPanel.css';
 
 const styles = theme => ({
   root: theme.mixins.gutters({
@@ -21,42 +22,44 @@ const styles = theme => ({
 const propTypes = {
   classes: PropTypes.object.isRequired,
   chrome: PropTypes.array,
+  edge: PropTypes.array,
+  firefox: PropTypes.array,
   safari: PropTypes.array
 };
 
-function BrowserSupport(props) {
+function BrowserSupportPanel(props) {
   const { classes, chrome, safari, edge, firefox } = props;
 
   return (
-    <div className="BrowserSupport">
-      <BrowserDetailReport
-        className="BrowserSupport__detail-report"
+    <div className="BrowserSupportPanel">
+      <BrowserDetails
+        className="BrowserSupportPanel__details"
         name="Chrome"
-        details={chrome}
         logo={chromeLogo}
+        details={chrome}
       />
-      <BrowserDetailReport
-        className="BrowserSupport__detail-report"
-        name="Safari"
-        details={safari}
-        logo="{safariLogo}"
-      />
-      <BrowserDetailReport
-        className="BrowserSupport__detail-report"
+      <BrowserDetails
+        className="BrowserSupportPanel__details"
         name="Edge"
-        details={edge}
         logo={edgeLogo}
+        details={edge}
       />
-      <BrowserDetailReport
-        className="BrowserSupport__detail-report"
+      <BrowserDetails
+        className="BrowserSupportPanel__details"
         name="Firefox"
-        details={firefox}
         logo={firefoxLogo}
+        details={firefox}
+      />
+      <BrowserDetails
+        className="BrowserSupportPanel__details"
+        name="Safari"
+        logo={safariLogo}
+        details={safari}
       />
     </div>
   );
 }
 
-BrowserSupport.propTypes = propTypes;
+BrowserSupportPanel.propTypes = propTypes;
 
-export default withStyles(styles)(BrowserSupport);
+export default withStyles(styles)(BrowserSupportPanel);

@@ -10,9 +10,10 @@ import edgeJSON from '../../data/edge.json';
 import firefoxJSON from '../../data/firefox.json';
 import speechInspector from '../../speechInspector';
 import AppBar from '../AppBar/AppBar';
+import Introduction from '../Introduction/Introduction';
 import PlatformSummary from '../PlatformSummary/PlatformSummary';
 import PlatformVoices from '../PlatformVoices/PlatformVoices';
-import BrowserSupport from '../BrowserSupport/BrowserSupport';
+import BrowserSupportPanel from '../BrowserSupportPanel/BrowserSupportPanel';
 import LanguageSearch from '../LanguageSearch/LanguageSearch';
 import './App.css';
 
@@ -36,7 +37,7 @@ class App extends Component {
     const onLogin = user => {
       console.log('User logged in anonymously!');
       speechInspector.init().then(voices => {
-        // this.writeSpeechData(user.uid, platform, voices);
+        this.writeSpeechData(user.uid, platform, voices);
         this.setState({ voices });
       });
     };
@@ -112,10 +113,11 @@ class App extends Component {
 
     return (
       <div className="App">
-        <AppBar />
+        {/* <AppBar /> */}
         <div className="App__main">
-          <LanguageSearch />
-          <BrowserSupport
+          {/* <LanguageSearch /> */}
+          <Introduction />
+          <BrowserSupportPanel
             chrome={this.formatPlatformsJSON(chromeJSON)}
             safari={this.formatPlatformsJSON(safariJSON)}
             edge={this.formatPlatformsJSON(edgeJSON)}

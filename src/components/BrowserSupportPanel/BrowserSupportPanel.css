@@ -1,0 +1,7 @@
+.BrowserSupportPanel {
+  display: flex;
+}
+
+.BrowserSupportPanel__details {
+  flex: 1;
+}
