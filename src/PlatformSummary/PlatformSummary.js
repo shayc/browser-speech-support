@@ -30,7 +30,7 @@ function PlatformSummary(props) {
   return (
     <Paper className={classes.root}>
       <Typography variant="headline" component="h3">
-        Summary
+        Platform Summary
       </Typography>
 
       <Typography component="dl">

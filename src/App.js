@@ -8,10 +8,11 @@ import speechInspector from './speech-inspector';
 import AppBar from './AppBar/AppBar';
 import PlatformSummary from './PlatformSummary/PlatformSummary';
 import PlatformVoices from './PlatformVoices/PlatformVoices';
+import BrowsersSpeechSupport from './BrowsersSpeechSupport/BrowsersSpeechSupport';
 import LanguageSearch from './LanguageSearch/LanguageSearch';
-import chromeLogo from './logos/chrome.svg';
-import firefoxLogo from './logos/firefox.svg';
-import edgeLogo from './logos/edge.svg';
+
+import chromeJSON from './data/chrome.json';
+import safariJSON from './data/safari.json';
 import './App.css';
 
 // Initialize Firebase
@@ -54,19 +55,6 @@ class App extends Component {
     // return [...new Set(voices.map(voice => voice.lang))];
   }
 
-  getBrowserLogo(browserName) {
-    switch (browserName) {
-      case 'Chrome':
-        return chromeLogo;
-      case 'Firefox':
-        return firefoxLogo;
-      case 'Microsoft Edge':
-        return edgeLogo;
-      default:
-      // no default
-    }
-  }
-
   signInAnonymously() {
     return firebase
       .auth()
@@ -101,6 +89,18 @@ class App extends Component {
       });
   }
 
+  formatPlatformsJSON(platforms) {
+    return platforms.map(platform => ({
+      browserName: platform.browserName,
+      browserVersion: platform.browserVersion,
+      osFamily: platform.osFamily,
+      osVersion: platform.osVersion,
+      langs: this.getUniqueLangs(platform.voices).length,
+      voices: platform.voices.length,
+      localServices: this.filterLocalServices(platform.voices).length
+    }));
+  }
+
   render() {
     const summary = {
       browserName: platform.name,
@@ -117,6 +117,7 @@ class App extends Component {
         <AppBar />
         <div className="App__main">
           <LanguageSearch />
+          <BrowsersSpeechSupport chrome={this.formatPlatformsJSON(chromeJSON)} safari={this.formatPlatformsJSON(safariJSON)} />
           <PlatformSummary summary={summary} />
           <PlatformVoices voices={this.state.voices} />
         </div>

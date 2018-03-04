@@ -187,7 +187,7 @@ class IntegrationAutosuggest extends React.Component {
         renderSuggestion={renderSuggestion}
         inputProps={{
           classes,
-          placeholder: 'Search a language',
+          placeholder: 'Type a language name...',
           value: this.state.value,
           onChange: this.handleChange
         }}
