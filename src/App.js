@@ -13,6 +13,7 @@ import LanguageSearch from './LanguageSearch/LanguageSearch';
 
 import chromeJSON from './data/chrome.json';
 import safariJSON from './data/safari.json';
+import edgeJSON from './data/edge.json';
 import './App.css';
 
 // Initialize Firebase
@@ -35,14 +36,14 @@ class App extends Component {
   componentDidMount() {
     const onLogin = user => {
       console.log('User logged in anonymously!');
+      speechInspector.init().then(voices => {
+        // this.writeSpeechData(user.uid, platform, voices);
+        this.setState({ voices });
+      });
     };
 
     this.onAuthStateChanged(onLogin);
     this.signInAnonymously();
-
-    speechInspector.init().then(voices => {
-      this.setState({ voices });
-    });
   }
 
   getUniqueLangs(voices) {
@@ -117,7 +118,11 @@ class App extends Component {
         <AppBar />
         <div className="App__main">
           <LanguageSearch />
-          <BrowsersSpeechSupport chrome={this.formatPlatformsJSON(chromeJSON)} safari={this.formatPlatformsJSON(safariJSON)} />
+          <BrowsersSpeechSupport
+            chrome={this.formatPlatformsJSON(chromeJSON)}
+            safari={this.formatPlatformsJSON(safariJSON)}
+            edge={this.formatPlatformsJSON(edgeJSON)}
+          />
           <PlatformSummary summary={summary} />
           <PlatformVoices voices={this.state.voices} />
         </div>

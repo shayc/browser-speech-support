@@ -26,11 +26,12 @@ const propTypes = {
 };
 
 function BrowsersSpeechSupport(props) {
-  const { classes, chrome, safari } = props;
+  const { classes, chrome, safari, edge } = props;
   return (
     <div className="BrowsersSpeechSupport">
       <BrowserDetails details={chrome} />
       <BrowserDetails details={safari} />
+      <BrowserDetails details={edge} />
     </div>
   );
 }
