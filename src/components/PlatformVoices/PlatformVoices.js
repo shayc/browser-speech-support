@@ -47,7 +47,15 @@ const propTypes = {
        * The type of URI and location of the speech synthesis service for this
        * voice.
        */
-      voiceURI: PropTypes.string
+      voiceURI: PropTypes.string,
+      /**
+       * Associated full country name.
+       */
+      country: PropTypes.string,
+      /**
+       * Associated full language name.
+       */
+      language: PropTypes.string
     })
   )
 };
@@ -69,7 +77,9 @@ function SimpleTable(props) {
         <TableHead>
           <TableRow>
             <TableCell>Language Code</TableCell>
-            <TableCell>Name</TableCell>
+            <TableCell>Language</TableCell>
+            <TableCell>Country</TableCell>
+            <TableCell>Voice Name</TableCell>
             <TableCell>Default</TableCell>
             <TableCell>Local Service</TableCell>
             <TableCell>Voice URI</TableCell>
@@ -80,6 +90,8 @@ function SimpleTable(props) {
             return (
               <TableRow key={voice.voiceURI}>
                 <TableCell>{voice.lang}</TableCell>
+                <TableCell>{voice.language}</TableCell>
+                <TableCell>{voice.country}</TableCell>
                 <TableCell>{voice.name}</TableCell>
                 <TableCell>{voice.default ? 'True' : 'False'}</TableCell>
                 <TableCell>{voice.localService ? 'True' : 'False'}</TableCell>

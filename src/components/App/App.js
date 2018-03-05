@@ -9,14 +9,14 @@ import safariJSON from '../../data/safari.json';
 import edgeJSON from '../../data/edge.json';
 import firefoxJSON from '../../data/firefox.json';
 import speechInspector from '../../speechInspector';
-import AppBar from '../AppBar/AppBar';
+// import AppBar from '../AppBar/AppBar';
 import Introduction from '../Introduction/Introduction';
 import PlatformSummary from '../PlatformSummary/PlatformSummary';
 import PlatformVoices from '../PlatformVoices/PlatformVoices';
 import BrowserSupportPanel from '../BrowserSupportPanel/BrowserSupportPanel';
-import LanguageSearch from '../LanguageSearch/LanguageSearch';
+// import LanguageSearch from '../LanguageSearch/LanguageSearch';
 import Typography from 'material-ui/Typography';
-import Divider from 'material-ui/Divider';
+// import Divider from 'material-ui/Divider';
 import './App.css';
 
 // Initialize Firebase
@@ -86,8 +86,18 @@ class App extends Component {
         browserVersion: platform.version,
         osFamily: platform.os.family,
         osVersion: platform.os.version,
-        voices
+        voices: this.stripUndefinedKeys(voices)
       });
+  }
+
+  /*
+   * Strip out keys firebase isn't familiar with. If data sent to firebase 
+   * contains a key it's not familiar with, it crashes
+   */
+  stripUndefinedKeys(data) {
+    return JSON.parse(JSON.stringify(data, function(k, v) {
+      if (v === undefined) { return null; } return v; 
+   }));
   }
 
   formatPlatformsJSON(platforms) {

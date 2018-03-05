@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
-import Paper from 'material-ui/Paper';
-import Typography from 'material-ui/Typography';
+// import Paper from 'material-ui/Paper';
+// import Typography from 'material-ui/Typography';
 
 import BrowserDetails from '../BrowserDetails/BrowserDetails';
 import chromeLogo from '../../logos/chrome.svg';
@@ -28,7 +28,7 @@ const propTypes = {
 };
 
 function BrowserSupportPanel(props) {
-  const { classes, chrome, safari, edge, firefox } = props;
+  const { chrome, safari, edge, firefox } = props;
 
   return (
     <div className="BrowserSupportPanel">

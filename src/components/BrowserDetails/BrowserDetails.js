@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
-import Paper from 'material-ui/Paper';
+// import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 import Divider from 'material-ui/Divider';
 import classNames from 'classnames';
@@ -20,15 +20,15 @@ const styles = theme => ({
 
 const propTypes = {
   classes: PropTypes.object.isRequired,
-  details: PropTypes.shape({
+  details: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string,
     version: PropTypes.string,
-    logo: PropTypes.string
-  })
+    logo: PropTypes.string,
+  })).isRequired
 };
 
 function BrowserDetails(props) {
-  const { className, classes, name, version, logo, details } = props;
+  const { className, classes, name, logo, details } = props;
 
   return (
     <div className={classNames('BrowserDetails', className)}>
@@ -44,17 +44,19 @@ function BrowserDetails(props) {
       </Typography>
       <Divider className={classes.divider} />
       {details.map(detail => {
-        return [
-          <Typography variant="title" component="p">
-            {detail.osFamily} {detail.osVersion}
-          </Typography>,
-          <Typography paragraph component="dl">
-            <dt>Languages</dt>
-            <dd>{detail.langs}</dd>
-            <dt>Voices</dt>
-            <dd>{detail.voices}</dd>
-          </Typography>
-        ];
+        return (
+          <Fragment key={detail.osFamily}>
+            <Typography variant="title" component="p">
+              {detail.osFamily} {detail.osVersion}
+            </Typography>
+            <Typography paragraph component="dl">
+              <dt>Languages</dt>
+              <dd>{detail.langs}</dd>
+              <dt>Voices</dt>
+              <dd>{detail.voices}</dd>
+            </Typography>
+          </Fragment>
+        );
       })}
     </div>
   );
