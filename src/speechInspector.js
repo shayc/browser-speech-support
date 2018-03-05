@@ -1,3 +1,6 @@
+import LocaleCode from 'locale-code';
+import LanguageTags from 'language-tags';
+
 const speechInspector = {
   isSupported: () => 'speechSynthesis' in window,
 
@@ -19,13 +22,25 @@ const speechInspector = {
     });
   },
 
+  getCountry: code => {
+    return LocaleCode.getCountryName(code)
+  },
+
+  getFullLanguage: code => {
+    return LocaleCode.validateLanguageCode(code)
+      ? LocaleCode.getLanguageName(code)
+      : LanguageTags.language(code).descriptions()[0] // if only BCP 47 supplied
+  },
+
   mapVoices(voices) {
     return voices.map(voice => ({
       default: voice.default,
       lang: voice.lang,
       localService: voice.localService,
       name: voice.name,
-      voiceURI: voice.voiceURI
+      voiceURI: voice.voiceURI,
+      country: this.getCountry(voice.lang),
+      language: this.getFullLanguage(voice.lang)
     }));
   },
 
